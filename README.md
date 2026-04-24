@@ -95,6 +95,5 @@ Este proyecto es de uso personal y profesional. No se permite su redistribución
 
 📩 Email: julioquispe.dev@gmail.com
 💼 LinkedIn: https://www.linkedin.com/in/julio-cesar-quispe-garrido/
-
-📂 GitHub: github.com/Julio-73
-🌐 Portfolio: julio-73.github.io
+📂 GitHub: https://github.com/Julio-73
+🌐 Portfolio: https://julio-73.github.io/Ironman-landing-page/
