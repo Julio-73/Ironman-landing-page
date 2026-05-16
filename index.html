@@ -177,7 +177,7 @@ h2{font-family:var(--font-d);font-size:clamp(30px,3.5vw,46px);font-weight:700;le
 .pbtn-demo svg{width:13px;height:13px;flex-shrink:0}
 .pbtn-code{background:rgba(200,151,58,.06);border:1px solid rgba(200,151,58,.2);color:var(--gold2)}
 .pbtn-code::before{background:radial-gradient(circle at 50% 120%,rgba(200,151,58,.15) 0%,transparent 65%)}
-.pbtn-code:hover{border-color:rgba(200,151,58,.5);box-shadow:0 0 20px rgba(200,151,58,.12),inset 0 0 12px rgba(200,151,58,.05);transform:translateY(-2px);color:var(--gold3)}
+.pbtn-code:hover{border-color:rgba(200,151,58,.5);box-shadow:0 0 20px rgba(200,151,58,.12),inset 0 0 12px rgba(200,151,58,.05);transform:translateY(-2px);color(--gold3)}
 .pbtn-code:hover::before{opacity:1}
 .pbtn-code svg{width:13px;height:13px;flex-shrink:0}
 .pbtn-demo::after,.pbtn-code::after{content:'';position:absolute;top:50%;left:50%;width:0;height:0;border-radius:50%;transform:translate(-50%,-50%);transition:width .5s ease,height .5s ease,opacity .5s ease;opacity:0}
@@ -372,7 +372,7 @@ footer{border-top:1px solid var(--border);padding:44px 0 32px;background:var(--b
       <div class="pinf">
         <div class="ptyp">Aplicación Web</div>
         <h3>Aplicación web Principios Básicos</h3>
-        <p>Esta aplicación web es un estudio bíblico completo diseñado para ayudar a los creyentes a comprender los principios fundamentales de la fe cristiana. Con una interfaz moderna y fácil de usar, ofrece una experiencia de aprendizaje interactiva que funciona incluso sin conexión a internet.</p>
+        <p>Esta aplicación web es un estudio bíblico completo diseñado para ayudar a los creyentes a comprender los principios fundamentales de la fe cristiana. Con una interfaz moderna y fácil de usar, ofrece una experience de aprendizaje interactiva que funciona incluso sin conexión a internet.</p>
         <div class="ptechs"><span class="tbdg">HTML5</span><span class="tbdg">CSS3</span><span class="tbdg">JavaScript</span><span class="tbdg">Service Workers</span></div>
         <div class="pactions">
           <a href="https://julio-73.github.io/App-Principios-Basicos-/" class="pbtn pbtn-demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver Demo</a>
@@ -410,7 +410,7 @@ footer{border-top:1px solid var(--border);padding:44px 0 32px;background:var(--b
       <div class="pinf">
         <div class="ptyp">Streaming Web App</div>
         <h3>Aplicación web  de streaming de series</h3> 
-        <p>Experiencia de streaming inspirada en Netflix para la serie coreana “I’m Not a Robot” (로봇이 아니야). 32 episodios, diseño oscuro, animaciones suaves y navegación intuitiva.</p>
+        <p>Experiencia de streaming inspirada en Netflix para la serie coreana “I’m Not a Robot” (로봇i ani-ya). 32 episodios, diseño oscuro, animaciones suaves y navegación intuitiva.</p>
         <div class="ptechs"><span class="tbdg">HTML5</span><span class="tbdg">CSS3</span><span class="tbdg">JavaScript</span> <span class="tbdg">ok.ru</span>  </div>  
         <div class="pactions"> 
           <a href="https://julio-73.github.io/kdrama-Iam-Not-Robot/" class="pbtn pbtn-demo"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Ver Demo</a>
@@ -443,7 +443,7 @@ footer{border-top:1px solid var(--border);padding:44px 0 32px;background:var(--b
 <div class="pcard reveal rd2">
 
  <div class="pvis">
-        <img class="pvis-img" src="https://github.com/Julio-73/Elegante-Pagina-de-Moda/blob/main/dist/assets/dise%C3%B1o3-DB3fuEic.jpeg?raw=true " alt="web" loading="lazy">
+        <img class="pvis-img" src="https://github.com/Julio-73/Elegante-Pagina-de-Moda/blob/main/dist/assets/dise%C3%B1o3-DB3fuEic.jpeg?raw=true" alt="web" loading="lazy">
         <div class="pvis-overlay"></div><div class="pvis-line"></div><div class="pvis-hud">Live · Web Activo</div>  
       </div>
      
@@ -588,6 +588,15 @@ var navCta=document.querySelector('.nav-cta');
 if(hamburger){
   hamburger.addEventListener('click',function(){navLinks.classList.toggle('active');navCta.classList.toggle('active')});
   navLinks.querySelectorAll('a').forEach(function(link){link.addEventListener('click',function(){if(window.innerWidth<=1000){navLinks.classList.remove('active');navCta.classList.remove('active')}})});
+  
+  if(navCta){
+    navCta.addEventListener('click',function(){
+      if(window.innerWidth<=1000){
+        navLinks.classList.remove('active');
+        navCta.classList.remove('active');
+      }
+    });
+  }
 }
 
 /* Scroll reveal */
@@ -777,7 +786,7 @@ document.querySelectorAll('.nav-links a, .nav-cta').forEach(function(link){
     var now=performance.now()/1000;
     if(isDisassembling){var elapsed=now-animStartTime;if(elapsed>=ANIM_DURATION){isDisassembling=false;pieces.forEach(function(p){p.mesh.visible=false});return}animProgress=elapsed/ANIM_DURATION;var ease=easeInCubic(animProgress);pieces.forEach(function(p){if(ease<=0)return;var fly=ease;p.mesh.position.set(p.homePos.x+p.dir.x*fly*4,p.homePos.y+p.dir.y*fly*3.5,p.homePos.z+p.dir.z*fly*4);p.mesh.scale.setScalar(1-fly*0.7);if(!p.isGlow)p.mesh.material.opacity=1-fly;p.mesh.rotation.y=p.homeRot.y+fly*Math.PI*2*Math.sign(p.dir.x+0.01);p.mesh.visible=true});
     }else if(isReassembling){var elapsed2=now-animStartTime;if(elapsed2>=ANIM_DURATION){isReassembling=false;pieces.forEach(function(p){p.mesh.position.copy(p.homePos);p.mesh.rotation.copy(p.homeRot);p.mesh.scale.copy(p.homeScale);p.mesh.visible=true;if(!p.isGlow)p.mesh.material.opacity=1});triggerSnapEffect();return}animProgress=elapsed2/ANIM_DURATION;var ep=easeOutCubic(animProgress);var invEp=1-ep;pieces.forEach(function(p){if(ep<=0.05){p.mesh.visible=false;return}p.mesh.visible=true;var radius=invEp*4.5;var spin=invEp*Math.PI*10*(p.dir.x>0?1:-1);var arcY=Math.sin(invEp*Math.PI)*2.5;var tx=p.homePos.x+Math.cos(spin+p.delay*30)*radius;var tz=p.homePos.z+Math.sin(spin+p.delay*30)*radius;var ty=p.homePos.y+arcY+invEp*p.dir.y*2;if(ep>0.85){var shake=(1-ep)*10;tx+=(Math.random()-0.5)*shake*0.15;ty+=(Math.random()-0.5)*shake*0.15}p.mesh.position.set(tx,ty,tz);p.mesh.scale.setScalar(0.1+ep*0.9);if(!p.isGlow)p.mesh.material.opacity=ep;p.mesh.rotation.y=p.homeRot.y+(1-ep)*Math.PI*3*Math.sign(p.dir.x+0.01)});
-    }
+  }
   }
 
   var raycaster=new THREE.Raycaster();var mouse=new THREE.Vector2();
